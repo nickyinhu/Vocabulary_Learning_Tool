@@ -1,0 +1,1 @@
+python -m pwiz -e mysql -u 6460 -P -H 10.10.0.229 6460 > models.py
