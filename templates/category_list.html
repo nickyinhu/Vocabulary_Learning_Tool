@@ -1,0 +1,13 @@
+<html>
+    <head>
+        <title>{{ title }} - Learning Vocabulary in Real Life Events</title>
+    </head>
+    <body>
+        <h1>Hello, {{ user.nickname }}!</h1>
+        <h3>Please choose which category of events you want to learn words</h3>
+        {% for category in category_list %}
+            <ul><a href="/category/{{ category.name }}"><p><b>{{ category.id }}: <b>{{ category.name }}</b></p>
+            <img src="{{ url_for('static', filename =  'category/' + category.name + '.jpg') }}" width="185" height="100"></ul>
+        {% endfor %}
+    </body>
+</html>
