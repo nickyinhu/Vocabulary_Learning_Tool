@@ -1,8 +1,8 @@
 from db.models import *
 
 
-def get_scenario_by_category(categoryID):
-    scenarios = Scenarios.select().where(Scenarios.category == categoryID)
+def get_scenario_by_category(category_id):
+    scenarios = Scenarios.select().where(Scenarios.category == category_id)
     if scenarios is not None:
         return scenarios
 
@@ -12,18 +12,17 @@ def get_all_categories():
     if categories is not None:
         return categories
 
-
-def get_category_by_id(id):
-    categories = Category.select().where(Category.id == id)
-    if categories is not None:
-        return categories[0]
-
-def get_words_by_scenario(id):
-    words = Words.select().where(Words.scenario == id)
+def get_words_by_scenario_name(scenario_name):
+    words = Words.select(Words).join(Scenarios).where(Scenarios.name == scenario_name)
     if words is not None:
         return words
 
-def get_sentence_by_id(id):
-    sentences = SampleSentence.select().where(SampleSentence.word == id)
+def get_sentence_by_word(word):
+    sentences = SampleSentence.select(SampleSentence).join(Words).where(Words.word == word)
     if sentences is not None:
         return sentences
+
+def get_scenario_by_category_name(category_name):
+    scenarios = Scenarios.select(Scenarios).join(Category).where(Category.name == category_name)
+    if scenarios is not None:
+        return scenarios
