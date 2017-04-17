@@ -4,14 +4,13 @@
         <title>{{ title }} - Learning Vocabulary in Real Life Events</title>
     </head>
     <body>
-        <h3>Please choose click the word to learn further</h3>
+        <h1>{{word_row.word}}</h1>
+        <h3>Meaning: {{word_row.meaning}}</h3>
+        <h4>Sample sentences:</h4>
         {% set counter = 1 %}
-        {% for word in word_list %}
+        {% for sentence in sentence_list %}
             <ul>
-                <a href="/word/{{ word.id }}/{{ word.word }}">
-                <p><b>{{ counter }} {{ word.word }}</b> ({{ word.meaning }})</p>
-                <img src="{{ url_for('static', filename =  'word/' + word.word + '.jpg') }}" width="200" height="140">
-
+                {{ sentence.sentence }}
             </ul>
             {% set counter = counter + 1 %}
         {% endfor %}

@@ -45,11 +45,13 @@ def scenario_choice(scenario_name):
 
 @app.route('/word/<word_id>/<word>')
 def word_choice(word_id,word):
+    word_row = get_word(word_id)
     sentence_list = get_sentence_list(word)
     return render_template("sentence_list.html",
                            title='Sample sentences for <' + word + '>',
+                           word_row = word_row,
                            sentence_list = sentence_list)
 
 
 if __name__ == "__main__":
-    app.run()
+    app.run(port=5000,host= '0.0.0.0')

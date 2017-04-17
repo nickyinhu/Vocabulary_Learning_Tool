@@ -10,6 +10,11 @@ def get_words_by_scenario(scenario_name):
     if words is not None:
         return words
 
+def get_word_by_id(word_id):
+    words = Words.select(Words).where(Words.id == word_id)
+    if words is not None:
+        return words[0]
+
 def get_sentence_by_word(word):
     sentences = SampleSentence.select(SampleSentence).join(Words).where(Words.word == word)
     if sentences is not None:

@@ -19,3 +19,7 @@ def get_word_list(scenario_name):
 def get_sentence_list(word):
     sentence_list = get_sentence_by_word(word)
     return sentence_list
+
+def get_word(word_id):
+    word = get_word_by_id(word_id)
+    return word
