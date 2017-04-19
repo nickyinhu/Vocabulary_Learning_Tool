@@ -8,9 +8,9 @@
     {% for word in word_list %}
         <ul>
             <a href="/word/{{ word.id }}/{{ word.word }}">
-            <p><b>{{ counter }} {{ word.word }}</b> ({{ word.meaning }})</p>
+            <p><b>{{ counter }}. {{ word.word }}</b> ({{ word.meaning }})</p>
             <img src="{{ url_for('static', filename =  'word/' + word.word + '.jpg') }}" width="200" height="140">
-
+            </a>
         </ul>
         {% set counter = counter + 1 %}
     {% endfor %}
