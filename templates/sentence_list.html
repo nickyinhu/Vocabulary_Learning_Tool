@@ -1,9 +1,8 @@
-<html>
-    <head>
-        <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/style.css') }}">
-        <title>{{ title }} - Learning Vocabulary in Real Life Events</title>
-    </head>
-    <body>
+{% extends "layout.html" %}
+{% block title %}
+    Learning Vocabulary in Real Life Events
+{% endblock %}
+{% block body %}
         <h1>{{word_row.word}}</h1>
         <h3>Meaning: {{word_row.meaning}}</h3>
         <h4>Sample sentences:</h4>
@@ -14,5 +13,4 @@
             </ul>
             {% set counter = counter + 1 %}
         {% endfor %}
-    </body>
-</html>
+{% endblock %}

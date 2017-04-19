@@ -1,0 +1,21 @@
+<!doctype html>
+<!-- <title>{% block title %}Welcome{% endblock %} | Vocabulary Learning Tool</title> -->
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+<div class="page">
+  <h1>Learning Vocabulary in Real Life</h1>
+  <div class="navigation">
+  {% if g.user %}
+    <a href="{{ url_for('index') }}">Home</a> |
+    <a href="{{ url_for('logout') }}">sign out [{{ g.user.username }}]</a>
+  {% else %}
+    <a href="{{ url_for('register') }}">sign up</a> |
+    <a href="{{ url_for('login') }}">sign in</a>
+  {% endif %}
+  </div>
+  <div class="body">
+  {% block body %}{% endblock %}
+  </div>
+  <div class="footer">
+    Vocabulary Learning Tool &mdash; A Flask Application
+  </div>
+</div>

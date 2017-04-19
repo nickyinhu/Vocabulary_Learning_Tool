@@ -37,3 +37,12 @@ class SampleSentence(BaseModel):
     class Meta:
         db_table = 'sample_sentence'
 
+class User(BaseModel):
+    email = TextField()
+    pw_hash = TextField()
+    user = PrimaryKeyField(db_column='user_id')
+    username = TextField()
+
+    class Meta:
+        db_table = 'user'
+

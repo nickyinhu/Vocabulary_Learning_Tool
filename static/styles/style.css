@@ -10,6 +10,20 @@ ul li{
     float: left;
     width: 50%;//helps to determine number of columns, for instance 33.3% displays 3 columns
 }
+div.page div.navigation {
+    background: #DEE9E8;
+    padding: 4px 10px;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #eee;
+    color: #888;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+}
+
+div.page div.navigation a {
+    color: #444;
+    font-weight: bold;
+}
 .columns		{ float: left; position: relative; margin-right: 20px; }
 
 .page           { margin: 2em auto; width: 35em; border: 5px solid #ccc;
