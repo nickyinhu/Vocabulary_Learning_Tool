@@ -12,9 +12,11 @@ def get_words_by_scenario(scenario_name):
         return words
 
 def get_word_by_id(word_id):
-    words = Words.get(Words.id == word_id)
-    if words.exists():
-        return words[0]
+    try:
+        word = Words.get(Words.id == word_id)
+    except Words.DoesNotExist:
+        word = None
+    return word
 
 def get_sentence_by_word(word):
     sentences = SampleSentence.select(SampleSentence).join(Words).where(Words.word == word)
@@ -27,18 +29,18 @@ def get_scenario_by_category(category_name):
         return scenarios
 
 def get_user_by_username(username):
-    user = User.select(User).where(User.username == username)
-
-    pprint(user)
-    if user.exists():
-        return user[0]
-    else:
-    	return None
+    try:
+        user = User.get(User.username == username)
+    except User.DoesNotExist:
+        user = None
+    return user
 
 def get_user_by_userid(user_id):
-    user = User.select(User).where(User.user == user_id)
-    if user.exists():
-        return user[0]
+    try:
+        user = User.get(User.user == user_id)
+    except User.DoesNotExist:
+        user = None
+    return user
 
 def create_user_in_db(username,email,pw_hash):
     User.insert(username = username, email = email, pw_hash = pw_hash).execute()

@@ -105,7 +105,7 @@ def login():
             flash('You are now logged in')
             session['user_id'] = user.user
             return redirect(url_for('index'))
-    return render_template('index.html', error=error)
+    return render_template('login.html', error=error)
 
 @app.route('/logout')
 def logout():
