@@ -6,11 +6,7 @@
         <h1>{{word_row.word}}</h1>
         <h3>Meaning: {{word_row.meaning}}</h3>
         <h4>Sample sentences:</h4>
-        {% set counter = 1 %}
         {% for sentence in sentence_list %}
-            <ul>
-                {{ sentence.sentence }}
-            </ul>
-            {% set counter = counter + 1 %}
+            <ul>{{ sentence.sentence }}</ul>
         {% endfor %}
 {% endblock %}

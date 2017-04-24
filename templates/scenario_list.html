@@ -4,13 +4,11 @@
 {% endblock %}
 {% block body %}
     <h3>Please choose which event you want to learn words</h3>
-    {% set counter = 1 %}
     {% for scenario in scenarios_list %}
         <ul>
-            <a href="/event/{{ scenario.event }}"><p><b>{{ counter }}: <b>{{ scenario.event }}</b></p>
+            <a href="/event/{{ scenario.event }}"><p><b>{{ loop.index }}: <b>{{ scenario.event }}</b></p>
             <img src="{{ url_for('static', filename =  'event/' + scenario.event + '.jpg') }}" width="210" height="140">
             </a>
         </ul>
-        {% set counter = counter + 1 %}
     {% endfor %}
 {% endblock %}

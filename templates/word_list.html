@@ -4,14 +4,12 @@
 {% endblock %}
 {% block body %}
     <h3>Please choose click the word to learn further</h3>
-    {% set counter = 1 %}
     {% for word in word_list %}
         <ul>
             <a href="/word/{{ word.id }}/{{ word.word }}">
-            <p><b>{{ counter }}. {{ word.word }}</b> ({{ word.meaning }})</p>
+            <p><b>{{ loop.index }}. {{ word.word }}</b> ({{ word.meaning }})</p>
             <img src="{{ url_for('static', filename =  'word/' + word.word + '.jpg') }}" width="200" height="140">
             </a>
         </ul>
-        {% set counter = counter + 1 %}
     {% endfor %}
 {% endblock %}
