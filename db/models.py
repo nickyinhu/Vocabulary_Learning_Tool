@@ -3,7 +3,7 @@ from playhouse.db_url import connect
 
 # database = MySQLDatabase('sql9170918', **{'host': 'sql9.freesqldatabase.com', 'password': 'ZGDMCzDtkP', 'user': 'sql9170918'})
 
-database = connect('mysql://sql9170918:ZGDMCzDtkP@sql9.freesqldatabase.com:3306/sql9170918')
+database = connect('mysql://6460:password@54.175.149.116:3306/vocabulary')
 
 class UnknownField(object):
     def __init__(self, *_, **__): pass
