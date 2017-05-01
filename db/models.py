@@ -1,8 +1,6 @@
 from peewee import *
 from playhouse.db_url import connect
 
-# database = MySQLDatabase('sql9170918', **{'host': 'sql9.freesqldatabase.com', 'password': 'ZGDMCzDtkP', 'user': 'sql9170918'})
-
 database = connect('mysql://6460:password@54.175.149.116:3306/vocabulary')
 
 class UnknownField(object):

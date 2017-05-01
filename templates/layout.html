@@ -8,6 +8,7 @@
     <a href="{{ url_for('index') }}">Home</a> |
     <a href="{{ url_for('logout') }}">sign out [{{ g.user.username }}]</a>
   {% else %}
+    <a href="{{ url_for('index') }}">Home</a> |
     <a href="{{ url_for('register') }}">sign up</a> |
     <a href="{{ url_for('login') }}">sign in</a>
   {% endif %}
