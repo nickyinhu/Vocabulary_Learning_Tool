@@ -5,6 +5,8 @@ from data import *
 
 # create our little application :)
 app = Flask(__name__)
+app.secret_key = 'my secret key'
+app.config['SESSION_TYPE'] = 'filesystem'
 
 
 @app.before_request
@@ -114,9 +116,9 @@ def logout():
     session.pop('user_id', None)
     return redirect(url_for('index'))
 
-if __name__ == "__main__":
-    app.secret_key = 'my secret key'
-    app.config['SESSION_TYPE'] = 'filesystem'
+# if __name__ == "__main__":
+#     app.secret_key = 'my secret key'
+#     app.config['SESSION_TYPE'] = 'filesystem'
 
-    app.debug = True
-    app.run(port=80,host= '0.0.0.0')
+#     app.debug = True
+#     app.run(port=80,host= '0.0.0.0')
